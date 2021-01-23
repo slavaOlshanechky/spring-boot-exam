@@ -20,7 +20,7 @@ public class CampaignServiceImpl implements CampaignService {
     public CreatedCampaignResponseDto addNewCampaign(AddCampaignDto newCampaign) {
         //Campaign campaign = CampaignRepository.findByOwnerAndEventId(sessionLogin, eventId);
 //if(!campaignRepository.findByName(name));
-//        return CreatedCampaignResponseDto.builder()
+//        return CreatedCampaignResponseDto.builder() //it does not work
 //                .name()
 //                .startDate()
 //                .category()

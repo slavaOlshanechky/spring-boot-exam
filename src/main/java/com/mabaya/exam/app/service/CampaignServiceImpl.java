@@ -1,7 +1,6 @@
 package com.mabaya.exam.app.service;
 
-import com.mabaya.exam.app.dto.AddCampaignDto;
-import com.mabaya.exam.app.dto.CreatedCampaignResponseDto;
+import com.mabaya.exam.app.dto.CampaignDto;
 import lombok.Builder;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +27,7 @@ public class CampaignServiceImpl implements CampaignService {
 //    }
 
     @Override
-    public CreatedCampaignResponseDto addNewCampaign(String name, LocalDate startDate, String category, Double bid) {
+    public CampaignDto addNewCampaign(String name, LocalDate startDate, String category, Double bid) {
         return null;
     }
 }

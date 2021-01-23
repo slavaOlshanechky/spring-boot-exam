@@ -2,15 +2,21 @@ package com.mabaya.exam.app.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
+@Setter
+@Builder
 @ToString
-public class ServeAdDto {
 
-    String title;
+
+public class CampaignDto {
+    String name;
+    LocalDate startDate;
     String category;
-    Double price;
+    Double bid;
+
 
 }

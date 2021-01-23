@@ -1,14 +1,11 @@
-package com.mabaya.exam.service;
+package com.mabaya.exam.app.service;
 
-import com.mabaya.exam.dao.CampaignRepository;
-import com.mabaya.exam.dto.AddCampaignDto;
-import com.mabaya.exam.dto.CreatedCampaignResponseDto;
-import com.mabaya.exam.model.Campaign;
+import com.mabaya.exam.app.dao.CampaignRepository;
+import com.mabaya.exam.app.dto.AddCampaignDto;
+import com.mabaya.exam.app.dto.CreatedCampaignResponseDto;
 import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
 
 @Builder
 @Service

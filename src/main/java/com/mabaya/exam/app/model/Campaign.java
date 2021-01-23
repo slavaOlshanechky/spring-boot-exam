@@ -1,4 +1,4 @@
-package com.mabaya.exam.model;
+package com.mabaya.exam.app.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

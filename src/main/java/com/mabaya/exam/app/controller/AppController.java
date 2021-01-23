@@ -1,16 +1,16 @@
-package com.mabaya.exam.controller;
+package com.mabaya.exam.app.controller;
 
 
-import com.mabaya.exam.dto.AddCampaignDto;
-import com.mabaya.exam.dto.CreatedCampaignResponseDto;
-import com.mabaya.exam.dto.ServeAdDto;
-import com.mabaya.exam.service.CampaignService;
-import com.mabaya.exam.service.ServeAdService;
+import com.mabaya.exam.app.dto.AddCampaignDto;
+import com.mabaya.exam.app.dto.CreatedCampaignResponseDto;
+import com.mabaya.exam.app.dto.ServeAdDto;
+import com.mabaya.exam.app.service.CampaignService;
+import com.mabaya.exam.app.service.ServeAdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/mabaya")
 public class AppController {
 
     @Autowired

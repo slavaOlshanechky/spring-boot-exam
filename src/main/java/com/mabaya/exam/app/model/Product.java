@@ -1,4 +1,4 @@
-package com.mabaya.exam.model;
+package com.mabaya.exam.app.model;
 import org.springframework.data.annotation.Id;
 
 import lombok.AllArgsConstructor;

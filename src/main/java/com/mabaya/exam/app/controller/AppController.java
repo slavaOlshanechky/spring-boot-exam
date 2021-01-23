@@ -4,7 +4,7 @@ package com.mabaya.exam.app.controller;
 import com.mabaya.exam.app.dto.CampaignDto;
 import com.mabaya.exam.app.dto.ProductDto;
 import com.mabaya.exam.app.service.CampaignService;
-import com.mabaya.exam.app.service.ServeAdService;
+import com.mabaya.exam.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ public class AppController {
     CampaignService CampaignService;
 
     @Autowired
-    ServeAdService ServeAdService;
+    ProductService ProductService;
 
     @PostMapping("/createCampaign/{name}/{startDate}/{category}/{bid}")
     public CampaignDto createCampaign(@PathVariable String name, @PathVariable LocalDate startDate,
@@ -28,7 +28,8 @@ public class AppController {
 
     @GetMapping("/serveAd/{category}")
     public ProductDto serveAd(@PathVariable String category) {
-        return ServeAdService.promotedProduct(category);
+
+        return ProductService.promotedProduct(category);
     }
 
 

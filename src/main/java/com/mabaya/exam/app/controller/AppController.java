@@ -9,26 +9,28 @@ import com.mabaya.exam.app.service.ServeAdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/mabaya")
+@RequestMapping//("/mabaya")
 public class AppController {
 
     @Autowired
-    CampaignService campaignService;
+    CampaignService CampaignService;
 
     @Autowired
-    ServeAdService serveAdService;
+    ServeAdService ServeAdService;
 
     @PostMapping("/createCampaign/{name}/{startDate}/{category}/{bid}")
-    public CreatedCampaignResponseDto createCampaign(@RequestBody AddCampaignDto newCampaign) {
-        return campaignService.addNewCampaign(newCampaign);
+    public CreatedCampaignResponseDto createCampaign(@PathVariable String name, @PathVariable LocalDate startDate,
+                                                     @PathVariable String category, @PathVariable Double bid) {//@RequestBody AddCampaignDto newCampaign
+        return CampaignService.addNewCampaign(name,startDate,category,bid);
     }
 
     @GetMapping("/serveAd/{category}")
     public ServeAdDto serveAd(@PathVariable String category) {
-        return serveAdService.promotedProduct(category);
+        return ServeAdService.promotedProduct(category);
     }
-
 
 
 }

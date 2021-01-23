@@ -1,8 +1,6 @@
-package com.mabaya.exam.dto;
+package com.mabaya.exam.app.dto;
 
-import com.mabaya.exam.model.Product;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 @NoArgsConstructor
 @AllArgsConstructor

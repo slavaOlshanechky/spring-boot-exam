@@ -1,4 +1,4 @@
-package com.mabaya.exam.dto;
+package com.mabaya.exam.app.dto;
 
 import lombok.*;
 

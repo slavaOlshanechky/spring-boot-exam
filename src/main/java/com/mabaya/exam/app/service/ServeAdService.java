@@ -1,8 +1,8 @@
 package com.mabaya.exam.app.service;
 
-import com.mabaya.exam.app.dto.ServeAdDto;
+import com.mabaya.exam.app.dto.ProductDto;
 
 
 public interface ServeAdService {
-    ServeAdDto promotedProduct(String category);
+    ProductDto promotedProduct(String category);
 }

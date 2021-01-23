@@ -1,9 +1,8 @@
 package com.mabaya.exam.app.controller;
 
 
-import com.mabaya.exam.app.dto.AddCampaignDto;
-import com.mabaya.exam.app.dto.CreatedCampaignResponseDto;
-import com.mabaya.exam.app.dto.ServeAdDto;
+import com.mabaya.exam.app.dto.CampaignDto;
+import com.mabaya.exam.app.dto.ProductDto;
 import com.mabaya.exam.app.service.CampaignService;
 import com.mabaya.exam.app.service.ServeAdService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +21,13 @@ public class AppController {
     ServeAdService ServeAdService;
 
     @PostMapping("/createCampaign/{name}/{startDate}/{category}/{bid}")
-    public CreatedCampaignResponseDto createCampaign(@PathVariable String name, @PathVariable LocalDate startDate,
-                                                     @PathVariable String category, @PathVariable Double bid) {//@RequestBody AddCampaignDto newCampaign
+    public CampaignDto createCampaign(@PathVariable String name, @PathVariable LocalDate startDate,
+                                      @PathVariable String category, @PathVariable Double bid) {
         return CampaignService.addNewCampaign(name,startDate,category,bid);
     }
 
     @GetMapping("/serveAd/{category}")
-    public ServeAdDto serveAd(@PathVariable String category) {
+    public ProductDto serveAd(@PathVariable String category) {
         return ServeAdService.promotedProduct(category);
     }
 

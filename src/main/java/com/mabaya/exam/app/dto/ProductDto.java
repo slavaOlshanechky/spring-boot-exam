@@ -2,11 +2,16 @@ package com.mabaya.exam.app.dto;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Getter
 @ToString
+@EqualsAndHashCode(of = { "productSerialNumber" })
+@Document(collection = "Products")
+
 public class ProductDto {
     @Id
     String productSerialNumber;
@@ -14,11 +19,4 @@ public class ProductDto {
     String category;
     Double price;
 
-
-    public ProductDto(String productSerialNumber, String title, String category, Double price) {
-        this.productSerialNumber = productSerialNumber;
-        this.title = title;
-        this.category = category;
-        this.price = price;
-    }
 }

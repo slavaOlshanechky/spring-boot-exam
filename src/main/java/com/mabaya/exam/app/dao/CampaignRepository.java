@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CampaignRepository extends MongoRepository<Campaign, String>{
 
-    Campaign findByName(String name);
+    //Campaign findByName(String name);
 }

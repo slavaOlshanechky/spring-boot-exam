@@ -1,15 +1,17 @@
 package com.mabaya.exam.app.model;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @ToString
+@EqualsAndHashCode(of = { "productSerialNumber" })
+@Document(collection = "Products")
+
 
 public class Product {
    @Id

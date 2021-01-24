@@ -8,5 +8,5 @@ public interface CampaignService {
 
     //CreatedCampaignResponseDto addNewCampaign(AddCampaignDto newCampaign);
 
-    CampaignDto addNewCampaign(String name, LocalDate startDate, String category, Double bid);
+    CampaignDto addNewCampaign(String name, LocalDate startDate, String category, int bid);
 }

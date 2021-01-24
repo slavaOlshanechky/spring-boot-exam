@@ -6,37 +6,43 @@ import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Builder
 @Service
 public class ProductServiceImpl implements ProductService {
+
     @Autowired
     ProductsRepository productsRepository;
 
-    @Override
-    public void addProducts(String productSerialNumber, String title, String category, Double price) {
 
-        int maxPrice = 100;
-        int minPrice = 1;
+    @PostConstruct
+    private void addProducts() {
 
-        List<ProductDto> products = new ArrayList<ProductDto>();
 
-        for (int i = 0; i < 100; i++) {
-            ProductDto pd = new ProductDto("serialNumber" + i, "Prod" + i, "cat" + i,
-                    (double) ((int) (Math.random() * ((maxPrice - minPrice) + 1)) + minPrice));
+        List<ProductDto> products = new ArrayList<>();
+
+        for (int i = 0; i < 15; i++) {
+            Double price =  10 * new Random().nextDouble();
+            price = new BigDecimal(price).setScale(1, RoundingMode.UP).doubleValue();
+            ProductDto pd = new ProductDto("serialNumber" + i, "Product" + i, "Category" + i,
+                    price);
             products.add(pd);
         }
 
         for (ProductDto product : products) {
             productsRepository.save(product);
         }
+
     }
 
     @Override
     public ProductDto promotedProduct(String category) {
-
 
         return new ProductDto("new serialNumber", "New title", category, 23.0);
     }
